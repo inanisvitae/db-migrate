@@ -1,0 +1,9 @@
+{
+  user_id: string (=>id),
+  custom_attributes: {
+    guest_id: string (=>guest_id)
+  },
+  name: string(=>(CONCAT(first_name, last_name)) after concatenation),
+  email: string (optional),
+  phone: string (optional) 
+}

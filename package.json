@@ -1,0 +1,19 @@
+{
+  "name": "dbmigrate",
+  "version": "1.0.0",
+  "description": "To migrate from 247tickets db to intercom db",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ziqi Hong",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "intercom-client": "^2.8.8",
+    "lodash": "^4.17.4",
+    "pg": "^7.0.2",
+    "pg-pool": "^2.0.1",
+    "redis": "^2.7.1"
+  }
+}
