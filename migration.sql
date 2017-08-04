@@ -2,7 +2,7 @@
 SELECT 
 	customer_id, 
 	guest_id, 
-	COUNT(order_id) AS num_purchased,
+	COUNT(DISTINCT order_id) AS num_orders,
 	array_agg(distinct project_slug) AS project_slug_string,
 	array_agg(distinct category_slug) AS category_slug_string
 FROM
@@ -26,10 +26,7 @@ FROM
 						SELECT 
 							id, 
 							customer_id, 
-							guest_id,
-							
-							status
-
+							guest_id
 						FROM 
 							public.order
 					) t1

@@ -162,7 +162,7 @@ function init() {
   let promises = [];
 
   //TODO: Some process to retrieve userData from database
-
+  
 
   var userData = mockData; //userData variable contains user data
 
@@ -207,31 +207,31 @@ function recover() {
 }
 
 
-// redis.get('recoveryMode', (err, result)=>{
-// 	if(err) {
-// 		console.log("error break point 1");
-// 	}else{
-// 		if(result){
-// 			recover();
-// 			console.log("enter recover");
+redis.get('recoveryMode', (err, result)=>{
+	if(err) {
+		console.log("error break point 1");
+	}else{
+		if(result){
+			recover();
+			console.log("enter recover");
 
-// 			redis.del('recoveryMode');
+			redis.del('recoveryMode');
 			
-// 		}else{
-// 			//Start from begining
-// 			redis.set('recoveryMode', 'true', (err, result) => {
-// 				if(err) {
-// 					console.log(err);
-// 					console.log("error break point 2");
-// 				}else{
-// 					init();
-// 					console.log("enter init");
+		}else{
+			//Start from begining
+			redis.set('recoveryMode', 'true', (err, result) => {
+				if(err) {
+					console.log(err);
+					console.log("error break point 2");
+				}else{
+					init();
+					console.log("enter init");
 
-// 				}
-// 			});
-// 		}
-// 	}
-// });
+				}
+			});
+		}
+	}
+});
 
 
 // client.users.update({
